@@ -1,0 +1,19 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class app
+() input_File
+() console
+
+input_File -> app : input Strings
+app -> console : Output to console based on input file
+
+
+class app {
+makeListEvenBigger()
+assignHashMap()
+comparison()
+printOutput()
+}
+
+@enduml

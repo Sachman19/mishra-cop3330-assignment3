@@ -24,22 +24,11 @@ public class app {
         //Use hashmap to map words with a count
         HashMap<String, Integer> newMap = assignHashMap(lines);
 
-        //Pull results from hashmap
-        ArrayList<tracker> trackers = new ArrayList<>();
-        Iterator hmIterator = newMap.entrySet().iterator();
-
-        while (hmIterator.hasNext()) {
-            Map.Entry element = (Map.Entry)hmIterator.next();
-            tracker newEntry = new tracker();
-            newEntry.assignVals(element);
-            trackers.add(newEntry);
-        }
-
         //sort hashmap by values
-        newMap.keySet();
+        comparison(newMap);
 
         //print values
-
+        printOutput(newMap);
     }
 
     public static List<String> makeListEvenBigger(List<String> lines){
@@ -72,20 +61,33 @@ public class app {
     }
 
     // function to sort hashmap by values
-    public static HashMap<String, Integer> comparison(HashMap<String, Integer> hm)
+    public static void comparison(HashMap<String, Integer> hm)
     {
         // Create a list from elements of HashMap
         List<Map.Entry<String, Integer> > list =
                 new LinkedList<>(hm.entrySet());
 
         // Sort the list
-        Collections.sort(list, Comparator.comparing(Map.Entry::getValue));
+        list.sort(Map.Entry.comparingByValue());
 
         // put data from sorted list to hashmap
         HashMap<String, Integer> temp = new LinkedHashMap<>();
         for (Map.Entry<String, Integer> aa : list) {
             temp.put(aa.getKey(), aa.getValue());
         }
-        return temp;
+    }
+
+    public static void printOutput(HashMap<String, Integer> hMap){
+        //for (Map.Entry<String, Integer> stringIntegerEntry : hMap.entrySet()) {
+
+        for (Map.Entry<String, Integer> stringIntegerEntry : hMap.entrySet()) {
+            System.out.printf("%-9s: ", ((Map.Entry) stringIntegerEntry).getKey());
+            for (int i = 0; i < (int) ((Map.Entry) stringIntegerEntry).getValue(); i++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+
     }
 }

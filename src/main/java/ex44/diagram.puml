@@ -1,0 +1,24 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class app
+() inputFile
+() Console
+
+inputFile -> app : input json file
+app -> Console : Output data
+app "Retrieval of Data" *--> "Storage of Data" jsonObject : Copy input into jsonObject
+
+
+class app {
+copyObject()
+compareInput()
+outputData()
+}
+class jsonObject{
+name
+price
+quantity
+}
+
+@enduml
