@@ -120,7 +120,7 @@ public class app {
             writeOut.write("<!DOCTYPE html>\n");
             writeOut.write("<html>\n");
             writeOut.write("<head>\n");
-            writeOut.write("\t<title>" + webName + "<\\title>\n" );
+            writeOut.write("\t<title>" + webName + "</title>\n" );
             writeOut.write("<meta name =\"author\" content = \"" + authName + "\">\n");
             writeOut.write("</head>\n");
             writeOut.write("<body>\n\n</body>\n</html>");
