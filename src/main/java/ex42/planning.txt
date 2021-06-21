@@ -1,0 +1,6 @@
+Functions Needed:
+    Read input data from file
+    Sort information into data fields (Use new object for this)
+    Print out information (not to new file)
+
+Need to create new class with 3 attributes (First Name, Last Name, Salary)
