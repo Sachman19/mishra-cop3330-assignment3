@@ -1,0 +1,19 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class app
+() user_Input
+() input_File
+() output_File
+
+input_File -> app : input Strings
+user_Input --> app : input custom file name
+app -> output_File : create files based on input
+
+
+class app {
+fixNewLine()
+writeOutput()
+}
+
+@enduml

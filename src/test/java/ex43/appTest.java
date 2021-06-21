@@ -14,5 +14,7 @@ class appTest {
 
         File existenceTest = new File("src/main/java/ex43/website/awecomeco");
         assertTrue(existenceTest.exists());
+
+        //Not only should this file exist, but the actual file itself should also include newline characters.
     }
 }
