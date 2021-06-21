@@ -51,22 +51,14 @@ public class app {
     public static void createWebsite(String webName, String authName, int jsCheck, int cssCheck){
         //begin by creating website directory
         String webNameClear = webName.replaceAll("\\s", ""); //clears whitespace from website name. Makes naming folder easier.
-        /*Website folder has to exist first before we can implement our custom folders.
-        File baseFold = new File("/src/main/java/ex43/website");
-        if(baseFold.mkdir()) {
-            System.out.printf("Created %s\n", baseFold.getPath());
-        }
-        else{
-            System.out.print("Error creating directory.\n");
-            return;
-        } */
 
-        File dir = new File("/src/main/java/ex43/website/" + webNameClear);
+        String filePath = "src/main/java/ex43/website/" + webNameClear;
+        File dir = new File(filePath);
         if(dir.mkdirs()) {
             System.out.printf("Created %s\n", dir.getPath());
         }
         else{
-            System.out.print("Error creating directory.\n");
+            System.out.print("Error creating base directory.\n");
             return;
         }
         //create index.html file
@@ -74,7 +66,7 @@ public class app {
 
         //if jsCheck == 1, create js folder
         if(jsCheck == 1){
-            File jsDir = new File("/src/main/java/ex43/website/" + webNameClear + "/js");
+            File jsDir = new File(filePath + "/js");
             if(jsDir.mkdir()) {
                 System.out.printf("Created %s\n", jsDir.getPath());
             }
@@ -85,7 +77,7 @@ public class app {
         }
         //if cssCheck == 1, create css folder
         if(cssCheck == 1){
-            File cssDir = new File("/src/main/java/ex43/website/" + webNameClear + "/css");
+            File cssDir = new File(filePath + "/css");
             if(cssDir.mkdir()) {
                 System.out.printf("Created %s\n", cssDir.getPath());
             }
@@ -111,8 +103,8 @@ public class app {
     }
 
     public static void createIndex(String webName, String authName){
-        String webNameClear = webName.replaceAll("\\s", "");
-        File index = new File("/src/main/java/ex43/website/" + webNameClear + "/index.html");
+        String filePath = "src/main/java/ex43/website/" + webName.replaceAll("\\s", "") + "/index.html";
+        File index = new File(filePath);
         try{
             index.createNewFile();
         }
@@ -122,7 +114,7 @@ public class app {
         }
 
         try{
-            FileWriter writeOut = new FileWriter("/src/main/java/ex43/website/" + webNameClear + "/index.html");
+            FileWriter writeOut = new FileWriter(filePath);
 
             //Writing the html document in separate lines makes it easier to read within code.
             writeOut.write("<!DOCTYPE html>\n");
