@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 public class app {
 
-    public void main(String[] args){
+    public static void main(String[] args){
         //Test for input file validity.
         File inFile = new File("src/main/java/ex42/exercise42_input.txt");
 
@@ -29,19 +29,30 @@ public class app {
         ArrayList<empInfo> inputData = readData(readFile);
 
         readFile.close();
-        //Output arraylist to console.
 
+        //Output arraylist to console.
+        outputData(inputData);
     }
 
-    public ArrayList<empInfo> readData(Scanner readFile){
+    public static ArrayList<empInfo> readData(Scanner readFile){
         ArrayList<empInfo> inputData = new ArrayList<>();
-        empInfo newInfo = new empInfo();
 
         while (readFile.hasNextLine()) {
+            empInfo newInfo = new empInfo();
             newInfo.parseInfo(readFile.nextLine());
             inputData.add(newInfo);
         }
 
         return inputData;
+    }
+
+    public static void outputData(ArrayList<empInfo> inputData){
+        System.out.println("Last      First     Salary");
+        System.out.println("--------------------------");
+        //System.out.printf("%d", inputData.size());
+
+        for (empInfo inputDatum : inputData) {
+            System.out.printf("%-9s %-9s %-6s\n", inputDatum.returnLName(), inputDatum.returnFName(), inputDatum.returnSalary());
+        }
     }
 }

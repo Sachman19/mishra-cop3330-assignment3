@@ -24,8 +24,8 @@ public class empInfo {
         String[] splitData = inData.split(",");
 
         //Assign each substring to attribute.
-        fName = splitData[0];
-        lName = splitData[1];
+        lName = splitData[0];
+        fName = splitData[1];
         salary = splitData[2];
     }
 }
