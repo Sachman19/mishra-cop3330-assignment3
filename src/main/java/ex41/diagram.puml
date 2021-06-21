@@ -2,10 +2,9 @@
 'https://plantuml.com/sequence-diagram
 
 
+input_File -|> app: Input data
+app : file.sort()
+app : output_File()
+app --|> output_File: Output sorted data
 
-Alice -> Bob: Authentication Request
-Bob --> Alice: Authentication Response
-
-Alice -> Bob: Another authentication Request
-Alice <-- Bob: another authentication Response
 @enduml

@@ -1,0 +1,6 @@
+Functions needed:
+    Read and save info from file
+    Sort info in alphabetical order (sort function should work for this)
+    Print info to new file
+
+Since each line is one entire string, no additional classes make sense.
