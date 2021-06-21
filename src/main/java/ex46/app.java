@@ -3,11 +3,11 @@
  *  Copyright 2021 Sachin Mishra
  */
 
-package ex41;
+package ex46;
 
 public class app {
 
-   /* public static void main(String[] args){
+    public static void main(String[] args){
 
-    } */
+    }
 }
